@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crise Hídrica Brasil | Conscientização e Ação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header role="banner">
+        <nav aria-label="Navegação Principal">
+            <div class="logo">Água<span>Viva</span></div>
+            <div class="accessibility-controls">
+                <button id="btn-contrast" aria-label="Alternar Alto Contraste">🌓</button>
+                <button id="btn-font-up" aria-label="Aumentar Fonte">A+</button>
+                <button id="btn-font-down" aria-label="Diminuir Fonte">A-</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="reveal">
+            <h1>Escassez de Água no Brasil</h1>
+            <p>Entenda o impacto da crise hídrica e como podemos preservar o futuro dos nossos reservatórios.</p>
+        </section>
+
+        <section id="data-cards" class="container reveal" aria-labelledby="stats-title">
+            <h2 id="stats-title" class="sr-only">Estatísticas Atuais</h2>
+            <div id="cards-container" class="grid-layout"></div>
+        </section>
+
+        <section id="regions" class="container reveal">
+            <h2>Cenário por Região</h2>
+            <div id="accordion-container" class="accordion">
+                </div>
+        </section>
+
+        <section id="tips" class="container reveal">
+            <h2>Como Ajudar</h2>
+            <div class="carousel" role="region" aria-label="Dicas de preservação">
+                <div id="carousel-track" class="carousel-track"></div>
+                <div class="carousel-nav">
+                    <button id="prev" aria-label="Dica anterior">❮</button>
+                    <button id="next" aria-label="Próxima dica">❯</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2024 Projeto Escassez Hídrica - UX & Acessibilidade.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
