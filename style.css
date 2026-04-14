@@ -1,0 +1,113 @@
+/* --- DESIGN SYSTEM & VARIABLES --- */
+:root {
+    --primary: #0077b6;
+    --secondary: #00b4d8;
+    --bg-light: #f8f9fa;
+    --text-dark: #212529;
+    --white: #ffffff;
+    --radius: 12px;
+    --spacing: 2rem;
+    --transition: all 0.3s ease;
+    --font-base: 1rem;
+}
+
+/* --- MODO ALTO CONTRASTE --- */
+body.high-contrast {
+    --primary: #ffff00;
+    --secondary: #ffffff;
+    --bg-light: #000000;
+    --text-dark: #ffffff;
+    --white: #000000;
+}
+
+/* --- RESET & BASE --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    font-size: var(--font-base);
+    transition: var(--transition);
+}
+
+.container { padding: var(--spacing); max-width: 1200px; margin: 0 auto; }
+
+/* --- HEADER & NAV --- */
+header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav { display: flex; justify-content: space-between; align-items: center; }
+
+.accessibility-controls button {
+    background: var(--white);
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+/* --- LAYOUT GRID (MODULAR) --- */
+.grid-layout {
+    display: grid;
+    /* Altere aqui o número de colunas para Desktop */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 2px solid transparent;
+}
+
+.high-contrast .card { border-color: var(--primary); }
+
+/* --- ACORDEÃO (EXPANDABLES) --- */
+.accordion-item { border-bottom: 1px solid var(--secondary); }
+.accordion-header {
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+    background: none;
+    border: none;
+    color: var(--text-dark);
+    font-weight: bold;
+    cursor: pointer;
+}
+.accordion-content { 
+    display: none; 
+    padding: 1rem; 
+    background: rgba(0,0,0,0.05);
+}
+.accordion-content.active { display: block; }
+
+/* --- CARROSSEL --- */
+.carousel { overflow: hidden; position: relative; background: var(--white); border-radius: var(--radius); }
+.carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
+.carousel-item { min-width: 100%; padding: 3rem; text-align: center; }
+
+/* --- ANIMAÇÕES (SCROLL REVEAL) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s all ease;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
